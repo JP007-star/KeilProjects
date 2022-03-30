@@ -1,0 +1,151 @@
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                    05/04/2020  22:41:43  PAGE 1
+
+
+BL51 BANKED LINKER/LOCATER V6.22.2.0, INVOKED BY:
+E:\MY DOCUMENT\SOFTWARE\KEIL V5\C51\BIN\BL51.EXE .\Objects\lcd char.obj TO .\Objects\lcd char PRINT (.\Listings\lcd char
+>> .m51) RAMSIZE (256)
+
+
+MEMORY MODEL: SMALL
+
+
+INPUT MODULES INCLUDED:
+  .\Objects\lcd char.obj (LCD_CHAR)
+  E:\MY DOCUMENT\SOFTWARE\KEIL V5\C51\LIB\C51S.LIB (?C_STARTUP)
+
+
+LINK MAP OF MODULE:  .\Objects\lcd char (LCD_CHAR)
+
+
+            TYPE    BASE      LENGTH    RELOCATION   SEGMENT NAME
+            -----------------------------------------------------
+
+            * * * * * * *   D A T A   M E M O R Y   * * * * * * *
+            REG     0000H     0008H     ABSOLUTE     "REG BANK 0"
+            IDATA   0008H     0001H     UNIT         ?STACK
+
+            * * * * * * *   C O D E   M E M O R Y   * * * * * * *
+            CODE    0000H     0003H     ABSOLUTE     
+                    0003H     07FDH                  *** GAP ***
+            CODE    0800H     0037H     UNIT         ?PR?_DELAY?LCD_CHAR
+            CODE    0837H     0019H     UNIT         ?PR?INIT?LCD_CHAR
+            CODE    0850H     000CH     UNIT         ?C_C51STARTUP
+            CODE    085CH     000AH     UNIT         ?PR?MAIN?LCD_CHAR
+            CODE    0866H     000AH     UNIT         ?PR?_COMMAND?LCD_CHAR
+            CODE    0870H     000AH     UNIT         ?PR?_DISPLAY?LCD_CHAR
+
+
+
+OVERLAY MAP OF MODULE:   .\Objects\lcd char (LCD_CHAR)
+
+
+SEGMENT
+  +--> CALLED SEGMENT
+---------------------
+?C_C51STARTUP
+  +--> ?PR?MAIN?LCD_CHAR
+
+?PR?MAIN?LCD_CHAR
+  +--> ?PR?INIT?LCD_CHAR
+  +--> ?PR?_DISPLAY?LCD_CHAR
+
+?PR?INIT?LCD_CHAR
+  +--> ?PR?_COMMAND?LCD_CHAR
+
+?PR?_COMMAND?LCD_CHAR
+  +--> ?PR?_DELAY?LCD_CHAR
+
+?PR?_DISPLAY?LCD_CHAR
+  +--> ?PR?_DELAY?LCD_CHAR
+
+
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  05/04/2020  22:41:43  PAGE 2
+
+
+
+SYMBOL TABLE OF MODULE:  .\Objects\lcd char (LCD_CHAR)
+
+  VALUE           TYPE          NAME
+  ----------------------------------
+
+  -------         MODULE        LCD_CHAR
+  C:0000H         SYMBOL        _ICE_DUMMY_
+  D:00A0H         PUBLIC        P2
+  D:00B0H         PUBLIC        P3
+  C:0808H         PUBLIC        _delay
+  C:085CH         PUBLIC        main
+  C:0837H         PUBLIC        init
+  B:00B0H.2       PUBLIC        en
+  C:0866H         PUBLIC        _command
+  B:00B0H.0       PUBLIC        rs
+  B:00B0H.1       PUBLIC        wr
+  C:0870H         PUBLIC        _display
+  -------         PROC          MAIN
+  C:085CH         LINE#         16
+  C:085CH         LINE#         17
+  C:085CH         LINE#         18
+  C:085CH         LINE#         19
+  C:085CH         LINE#         20
+  C:085FH         LINE#         21
+  C:0864H         LINE#         22
+  -------         ENDPROC       MAIN
+  -------         PROC          INIT
+  C:0837H         LINE#         28
+  C:0837H         LINE#         29
+  C:0837H         LINE#         30
+  C:083CH         LINE#         31
+  C:0841H         LINE#         32
+  C:0846H         LINE#         33
+  C:084BH         LINE#         34
+  -------         ENDPROC       INIT
+  -------         PROC          _COMMAND
+  D:0007H         SYMBOL        c
+  C:0866H         LINE#         37
+  C:0866H         LINE#         38
+  C:0866H         LINE#         39
+  C:0868H         LINE#         40
+  C:086AH         LINE#         41
+  C:086AH         LINE#         42
+  C:086AH         LINE#         43
+  C:086DH         LINE#         44
+  C:086FH         LINE#         45
+  -------         ENDPROC       _COMMAND
+  -------         PROC          _DISPLAY
+  D:0007H         SYMBOL        d
+  C:0870H         LINE#         47
+  C:0870H         LINE#         48
+  C:0870H         LINE#         49
+  C:0872H         LINE#         50
+  C:0874H         LINE#         51
+  C:0874H         LINE#         52
+  C:0874H         LINE#         53
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  05/04/2020  22:41:43  PAGE 3
+
+
+  C:0877H         LINE#         54
+  C:0879H         LINE#         55
+  -------         ENDPROC       _DISPLAY
+  -------         PROC          L?0020
+  -------         ENDPROC       L?0020
+  -------         PROC          _DELAY
+  D:0006H         SYMBOL        n
+  -------         DO            
+  D:0005H         SYMBOL        i
+  -------         ENDDO         
+  C:0808H         LINE#         60
+  C:0808H         LINE#         61
+  C:0808H         LINE#         63
+  C:0811H         LINE#         64
+  C:0811H         LINE#         65
+  C:0820H         LINE#         66
+  C:082FH         LINE#         67
+  C:0836H         LINE#         68
+  -------         ENDPROC       _DELAY
+  -------         ENDMOD        LCD_CHAR
+
+******************************************************************************
+* RESTRICTED VERSION WITH 0800H BYTE CODE SIZE LIMIT; USED: 006EH BYTE ( 5%) *
+******************************************************************************
+
+Program Size: data=9.0 xdata=0 code=125
+LINK/LOCATE RUN COMPLETE.  0 WARNING(S),  0 ERROR(S)

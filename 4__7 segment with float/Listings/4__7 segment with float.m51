@@ -1,0 +1,207 @@
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                    05/04/2020  20:16:35  PAGE 1
+
+
+BL51 BANKED LINKER/LOCATER V6.22.2.0, INVOKED BY:
+E:\MY DOCUMENT\SOFTWARE\KEIL V5\C51\BIN\BL51.EXE .\Objects\4__7 segment with float.obj TO .\Objects\4__7 segment with fl
+>> oat PRINT (.\Listings\4__7 segment with float.m51) RAMSIZE (256)
+
+
+MEMORY MODEL: SMALL WITH FLOATING POINT ARITHMETIC
+
+
+INPUT MODULES INCLUDED:
+  .\Objects\4__7 segment with float.obj (4__7_SEGMENT_WITH_FLOAT)
+  E:\MY DOCUMENT\SOFTWARE\KEIL V5\C51\LIB\C51FPS.LIB (?C?FPMUL)
+  E:\MY DOCUMENT\SOFTWARE\KEIL V5\C51\LIB\C51FPS.LIB (?C?FPCMP)
+  E:\MY DOCUMENT\SOFTWARE\KEIL V5\C51\LIB\C51FPS.LIB (?C?CASTF)
+  E:\MY DOCUMENT\SOFTWARE\KEIL V5\C51\LIB\C51FPS.LIB (?C?FPGETOPN)
+  E:\MY DOCUMENT\SOFTWARE\KEIL V5\C51\LIB\C51S.LIB (?C_STARTUP)
+  E:\MY DOCUMENT\SOFTWARE\KEIL V5\C51\LIB\C51S.LIB (?C?UIDIV)
+  E:\MY DOCUMENT\SOFTWARE\KEIL V5\C51\LIB\C51S.LIB (?C?LNEG)
+  E:\MY DOCUMENT\SOFTWARE\KEIL V5\C51\LIB\C51S.LIB (?C_INIT)
+
+
+LINK MAP OF MODULE:  .\Objects\4__7 segment with float (4__7_SEGMENT_WITH_FLOAT)
+
+
+            TYPE    BASE      LENGTH    RELOCATION   SEGMENT NAME
+            -----------------------------------------------------
+
+            * * * * * * *   D A T A   M E M O R Y   * * * * * * *
+            REG     0000H     0008H     ABSOLUTE     "REG BANK 0"
+            DATA    0008H     000EH     UNIT         ?DT?4__7_SEGMENT_WITH_FLOAT
+            DATA    0016H     0009H     UNIT         _DATA_GROUP_
+            IDATA   001FH     0001H     UNIT         ?STACK
+
+            * * * * * * *   C O D E   M E M O R Y   * * * * * * *
+            CODE    0000H     0003H     ABSOLUTE     
+                    0003H     07FDH                  *** GAP ***
+            CODE    0800H     0263H     UNIT         ?C?LIB_CODE
+            CODE    0A63H     00BDH     UNIT         ?PR?_FLOT?4__7_SEGMENT_WITH_FLOAT
+            CODE    0B20H     0095H     UNIT         ?PR?_RUN?4__7_SEGMENT_WITH_FLOAT
+            CODE    0BB5H     008CH     UNIT         ?C_C51STARTUP
+            CODE    0C41H     0033H     UNIT         ?PR?_DELAY1MS?4__7_SEGMENT_WITH_FLOAT
+            CODE    0C74H     0019H     UNIT         ?C_INITSEG
+            CODE    0C8DH     000DH     UNIT         ?PR?MAIN?4__7_SEGMENT_WITH_FLOAT
+
+
+
+OVERLAY MAP OF MODULE:   .\Objects\4__7 segment with float (4__7_SEGMENT_WITH_FLOAT)
+
+
+SEGMENT                                         DATA_GROUP 
+  +--> CALLED SEGMENT                         START    LENGTH
+-------------------------------------------------------------
+?C_C51STARTUP                                 -----    -----
+  +--> ?PR?MAIN?4__7_SEGMENT_WITH_FLOAT
+  +--> ?C_INITSEG
+
+?PR?MAIN?4__7_SEGMENT_WITH_FLOAT              -----    -----
+  +--> ?PR?_FLOT?4__7_SEGMENT_WITH_FLOAT
+
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  05/04/2020  20:16:35  PAGE 2
+
+
+?PR?_FLOT?4__7_SEGMENT_WITH_FLOAT             0016H    0006H
+  +--> ?PR?_RUN?4__7_SEGMENT_WITH_FLOAT
+
+?PR?_RUN?4__7_SEGMENT_WITH_FLOAT              001CH    0003H
+  +--> ?PR?_DELAY1MS?4__7_SEGMENT_WITH_FLOAT
+
+
+
+SYMBOL TABLE OF MODULE:  .\Objects\4__7 segment with float (4__7_SEGMENT_WITH_FLOAT)
+
+  VALUE           TYPE          NAME
+  ----------------------------------
+
+  -------         MODULE        4__7_SEGMENT_WITH_FLOAT
+  C:0000H         SYMBOL        _ICE_DUMMY_
+  D:0080H         PUBLIC        P0
+  D:00A0H         PUBLIC        P2
+  D:0008H         PUBLIC        dp1
+  D:0009H         PUBLIC        dp2
+  D:000AH         PUBLIC        dp3
+  D:000BH         PUBLIC        dp4
+  B:0080H.0       PUBLIC        s1
+  C:0C45H         PUBLIC        _delay1ms
+  B:0080H.1       PUBLIC        s2
+  B:0080H.2       PUBLIC        s3
+  C:0C8DH         PUBLIC        main
+  B:0080H.3       PUBLIC        s4
+  C:0A63H         PUBLIC        _flot
+  C:0B20H         PUBLIC        _run
+  D:000CH         PUBLIC        a
+  -------         PROC          MAIN
+  C:0C8DH         LINE#         15
+  C:0C8DH         LINE#         16
+  C:0C8DH         LINE#         17
+  C:0C8DH         LINE#         18
+  C:0C8DH         LINE#         19
+  C:0C98H         LINE#         20
+  -------         ENDPROC       MAIN
+  -------         PROC          _FLOT
+  D:0016H         SYMBOL        f
+  -------         DO            
+  D:001AH         SYMBOL        temp
+  -------         ENDDO         
+  C:0A63H         LINE#         23
+  C:0A6BH         LINE#         24
+  C:0A6BH         LINE#         26
+  C:0A93H         LINE#         27
+  C:0A93H         LINE#         28
+  C:0A96H         LINE#         29
+  C:0A9DH         LINE#         30
+  C:0A9FH         LINE#         31
+  C:0AC7H         LINE#         32
+  C:0AC7H         LINE#         33
+  C:0ACAH         LINE#         34
+  C:0AD1H         LINE#         35
+  C:0AD3H         LINE#         36
+  C:0AFDH         LINE#         37
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  05/04/2020  20:16:35  PAGE 3
+
+
+  C:0AFDH         LINE#         38
+  C:0B00H         LINE#         39
+  C:0B19H         LINE#         40
+  C:0B19H         LINE#         41
+  -------         ENDPROC       _FLOT
+  -------         PROC          _RUN
+  D:001CH         SYMBOL        n
+  -------         DO            
+  D:001EH         SYMBOL        k
+  -------         ENDDO         
+  C:0B20H         LINE#         56
+  C:0B24H         LINE#         57
+  C:0B24H         LINE#         59
+  C:0B35H         LINE#         60
+  C:0B35H         LINE#         61
+  C:0B49H         LINE#         62
+  C:0B4BH         LINE#         63
+  C:0B4EH         LINE#         64
+  C:0B50H         LINE#         66
+  C:0B6BH         LINE#         67
+  C:0B6DH         LINE#         68
+  C:0B70H         LINE#         69
+  C:0B72H         LINE#         71
+  C:0B8DH         LINE#         72
+  C:0B8FH         LINE#         73
+  C:0B92H         LINE#         74
+  C:0B94H         LINE#         76
+  C:0BA8H         LINE#         77
+  C:0BAAH         LINE#         78
+  C:0BADH         LINE#         79
+  C:0BAFH         LINE#         80
+  C:0BB4H         LINE#         81
+  -------         ENDPROC       _RUN
+  C:0C41H         SYMBOL        L?0028
+  -------         PROC          L?0027
+  -------         ENDPROC       L?0027
+  C:0C41H         SYMBOL        L?0028
+  -------         PROC          _DELAY1MS
+  D:0006H         SYMBOL        n
+  -------         DO            
+  D:0005H         SYMBOL        i
+  -------         ENDDO         
+  C:0C45H         LINE#         83
+  C:0C45H         LINE#         84
+  C:0C45H         LINE#         86
+  C:0C4EH         LINE#         87
+  C:0C4EH         LINE#         88
+  C:0C5DH         LINE#         89
+  C:0C6CH         LINE#         90
+  C:0C73H         LINE#         91
+  -------         ENDPROC       _DELAY1MS
+  -------         ENDMOD        4__7_SEGMENT_WITH_FLOAT
+
+  -------         MODULE        ?C?FPMUL
+  C:0800H         PUBLIC        ?C?FPMUL
+  -------         ENDMOD        ?C?FPMUL
+
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  05/04/2020  20:16:35  PAGE 4
+
+
+  -------         MODULE        ?C?FPCMP
+  C:0908H         PUBLIC        ?C?FPCMP
+  C:0906H         PUBLIC        ?C?FPCMP3
+  -------         ENDMOD        ?C?FPCMP
+
+  -------         MODULE        ?C?CASTF
+  C:097FH         PUBLIC        ?C?CASTF
+  -------         ENDMOD        ?C?CASTF
+
+  -------         MODULE        ?C?UIDIV
+  C:0A00H         PUBLIC        ?C?UIDIV
+  -------         ENDMOD        ?C?UIDIV
+
+  -------         MODULE        ?C?LNEG
+  C:0A55H         PUBLIC        ?C?LNEG
+  -------         ENDMOD        ?C?LNEG
+
+******************************************************************************
+* RESTRICTED VERSION WITH 0800H BYTE CODE SIZE LIMIT; USED: 01AAH BYTE (20%) *
+******************************************************************************
+
+Program Size: data=32.0 xdata=0 code=1181
+LINK/LOCATE RUN COMPLETE.  0 WARNING(S),  0 ERROR(S)

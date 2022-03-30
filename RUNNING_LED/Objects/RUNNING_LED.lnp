@@ -1,0 +1,3 @@
+".\Objects\RUNNING_LED.obj" 
+TO ".\Objects\RUNNING_LED" 
+PRINT(".\Listings\RUNNING_LED.m51") RAMSIZE(256) 

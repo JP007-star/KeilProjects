@@ -1,0 +1,75 @@
+C51 COMPILER V9.60.0.0   HELP                                                              05/04/2020 20:36:49 PAGE 1   
+
+
+C51 COMPILER V9.60.0.0, COMPILATION OF MODULE HELP
+OBJECT MODULE PLACED IN .\Objects\help.obj
+COMPILER INVOKED BY: E:\My document\software\KEIL V5\C51\BIN\C51.EXE help.C OPTIMIZE(8,SPEED) BROWSE DEBUG OBJECTEXTEND 
+                    -PRINT(.\Listings\help.lst) TABS(2) OBJECT(.\Objects\help.obj)
+
+line level    source
+
+   1          #include <reg51.h>
+   2          # define seg P2
+   3          
+   4          sbit dp1=P0^0;
+   5          sbit dp2=P0^1;
+   6          sbit dp3=P0^2;
+   7          sbit dp4=P0^3;
+   8          
+   9          unsigned char a[5]={0x89,0x86,0xc7,0x8c};
+  10          
+  11          void delay1ms (unsigned int n);
+  12          unsigned char i=0;
+  13          void main()
+  14          {
+  15   1        while (1)
+  16   1        {
+  17   2          seg =a[0]; //0x89 For (H)
+  18   2          dp1=0;
+  19   2          delay1ms(1);
+  20   2          dp1=1;
+  21   2          
+  22   2          seg=a[1]; // 0x86 - E
+  23   2          dp2=0;                           
+  24   2          delay1ms(1);
+  25   2          dp2=1;
+  26   2          
+  27   2          seg=a[2];//0xC7 
+  28   2          dp3=0;
+  29   2          delay1ms(1);
+  30   2          dp3=1;
+  31   2          
+  32   2          seg=a[3];//0x8C FOR P
+  33   2          dp4=0;
+  34   2          delay1ms(1);
+  35   2          dp4=1;
+  36   2        }
+  37   1      }
+  38          
+  39          
+  40          void delay1ms (unsigned int n)
+  41          {
+  42   1        unsigned char i;
+  43   1        for (n;n>0;n--)
+  44   1        {
+  45   2          for (i=255;i>0;i--);
+  46   2          for (i=255;i>0;i--);
+  47   2        }
+  48   1      }
+  49          
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =     93    ----
+   CONSTANT SIZE    =   ----    ----
+C51 COMPILER V9.60.0.0   HELP                                                              05/04/2020 20:36:49 PAGE 2   
+
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =      6    ----
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

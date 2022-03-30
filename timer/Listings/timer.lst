@@ -1,0 +1,45 @@
+C51 COMPILER V9.60.0.0   TIMER                                                             05/05/2020 14:19:41 PAGE 1   
+
+
+C51 COMPILER V9.60.0.0, COMPILATION OF MODULE TIMER
+OBJECT MODULE PLACED IN .\Objects\timer.obj
+COMPILER INVOKED BY: E:\My document\software\KEIL V5\C51\BIN\C51.EXE timer.c OPTIMIZE(8,SPEED) BROWSE DEBUG OBJECTEXTEND
+                    - PRINT(.\Listings\timer.lst) TABS(2) OBJECT(.\Objects\timer.obj)
+
+line level    source
+
+   1          // timer 0 mode 0 one ms delay
+   2          
+   3          # include <reg51.h>
+   4          void delay();
+   5          void main()
+   6          {
+   7   1        delay();
+   8   1      }
+   9          
+  10          void delay(unsigned int n)
+  11          {
+  12   1        TMOD =0X00; // (256*32 = 8192 -1000= 7192 --> 1110 0000)
+  13   1        TL0=0X18;   //0001 1000
+  14   1        TH0=0XE0;   //1110 0000
+  15   1        TR0=1;      // TIMER START
+  16   1        while (TF0==0); // WAITING FOR TF0 FLOG SET
+  17   1        TR0=0;           // TIMER OFF
+  18   1        TF0=0;          // TF0 FLOG RESET
+  19   1      }
+*** WARNING C280 IN LINE 10 OF timer.c: 'n': unreferenced local variable
+  20            
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =     26    ----
+   CONSTANT SIZE    =   ----    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----       2
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  1 WARNING(S),  0 ERROR(S)

@@ -1,0 +1,176 @@
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                    05/04/2020  22:59:53  PAGE 1
+
+
+BL51 BANKED LINKER/LOCATER V6.22.2.0, INVOKED BY:
+E:\MY DOCUMENT\SOFTWARE\KEIL V5\C51\BIN\BL51.EXE .\Objects\LCD_STRING.obj TO .\Objects\LCD_STRING PRINT (.\Listings\LCD_
+>> STRING.m51) RAMSIZE (256)
+
+
+MEMORY MODEL: SMALL
+
+
+INPUT MODULES INCLUDED:
+  .\Objects\LCD_STRING.obj (LCD_STRING)
+  E:\MY DOCUMENT\SOFTWARE\KEIL V5\C51\LIB\C51S.LIB (?C_STARTUP)
+  E:\MY DOCUMENT\SOFTWARE\KEIL V5\C51\LIB\C51S.LIB (?C?CLDPTR)
+
+
+LINK MAP OF MODULE:  .\Objects\LCD_STRING (LCD_STRING)
+
+
+            TYPE    BASE      LENGTH    RELOCATION   SEGMENT NAME
+            -----------------------------------------------------
+
+            * * * * * * *   D A T A   M E M O R Y   * * * * * * *
+            REG     0000H     0008H     ABSOLUTE     "REG BANK 0"
+            DATA    0008H     0003H     UNIT         _DATA_GROUP_
+            IDATA   000BH     0001H     UNIT         ?STACK
+
+            * * * * * * *   C O D E   M E M O R Y   * * * * * * *
+            CODE    0000H     0003H     ABSOLUTE     
+                    0003H     07FDH                  *** GAP ***
+            CODE    0800H     0037H     UNIT         ?PR?_DELAY?LCD_STRING
+            CODE    0837H     0025H     UNIT         ?PR?_STRING?LCD_STRING
+            CODE    085CH     001CH     UNIT         ?PR?MAIN?LCD_STRING
+            CODE    0878H     0019H     UNIT         ?PR?INIT?LCD_STRING
+            CODE    0891H     0019H     UNIT         ?C?LIB_CODE
+            CODE    08AAH     0017H     UNIT         ?CO?LCD_STRING
+            CODE    08C1H     000CH     UNIT         ?C_C51STARTUP
+            CODE    08CDH     000AH     UNIT         ?PR?_COMMAND?LCD_STRING
+            CODE    08D7H     000AH     UNIT         ?PR?_DISPLAY?LCD_STRING
+
+
+
+OVERLAY MAP OF MODULE:   .\Objects\LCD_STRING (LCD_STRING)
+
+
+SEGMENT                           DATA_GROUP 
+  +--> CALLED SEGMENT           START    LENGTH
+-----------------------------------------------
+?C_C51STARTUP                   -----    -----
+  +--> ?PR?MAIN?LCD_STRING
+
+?PR?MAIN?LCD_STRING             -----    -----
+  +--> ?PR?INIT?LCD_STRING
+  +--> ?CO?LCD_STRING
+  +--> ?PR?_STRING?LCD_STRING
+  +--> ?PR?_COMMAND?LCD_STRING
+
+?PR?INIT?LCD_STRING             -----    -----
+  +--> ?PR?_COMMAND?LCD_STRING
+
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  05/04/2020  22:59:53  PAGE 2
+
+
+?PR?_COMMAND?LCD_STRING         -----    -----
+  +--> ?PR?_DELAY?LCD_STRING
+
+?PR?_STRING?LCD_STRING          0008H    0003H
+  +--> ?PR?_DISPLAY?LCD_STRING
+
+?PR?_DISPLAY?LCD_STRING         -----    -----
+  +--> ?PR?_DELAY?LCD_STRING
+
+
+
+SYMBOL TABLE OF MODULE:  .\Objects\LCD_STRING (LCD_STRING)
+
+  VALUE           TYPE          NAME
+  ----------------------------------
+
+  -------         MODULE        LCD_STRING
+  C:0000H         SYMBOL        _ICE_DUMMY_
+  D:00A0H         PUBLIC        P2
+  D:00B0H         PUBLIC        P3
+  C:0808H         PUBLIC        _delay
+  C:0837H         PUBLIC        _string
+  C:085CH         PUBLIC        main
+  C:0878H         PUBLIC        init
+  B:00B0H.2       PUBLIC        en
+  C:08CDH         PUBLIC        _command
+  B:00B0H.0       PUBLIC        rs
+  B:00B0H.1       PUBLIC        wr
+  C:08D7H         PUBLIC        _display
+  -------         PROC          MAIN
+  C:085CH         LINE#         19
+  C:085CH         LINE#         20
+  C:085CH         LINE#         21
+  C:085CH         LINE#         22
+  C:085CH         LINE#         23
+  C:085FH         LINE#         24
+  C:0868H         LINE#         25
+  C:086DH         LINE#         26
+  C:0876H         LINE#         27
+  -------         ENDPROC       MAIN
+  -------         PROC          INIT
+  C:0878H         LINE#         33
+  C:0878H         LINE#         34
+  C:0878H         LINE#         35
+  C:087DH         LINE#         36
+  C:0882H         LINE#         37
+  C:0887H         LINE#         38
+  C:088CH         LINE#         39
+  -------         ENDPROC       INIT
+  -------         PROC          _COMMAND
+  D:0007H         SYMBOL        c
+  C:08CDH         LINE#         42
+  C:08CDH         LINE#         43
+  C:08CDH         LINE#         44
+  C:08CFH         LINE#         45
+  C:08D1H         LINE#         46
+  C:08D1H         LINE#         47
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  05/04/2020  22:59:53  PAGE 3
+
+
+  C:08D1H         LINE#         48
+  C:08D4H         LINE#         49
+  C:08D6H         LINE#         50
+  -------         ENDPROC       _COMMAND
+  -------         PROC          _STRING
+  D:0008H         SYMBOL        s
+  C:0837H         LINE#         52
+  C:083DH         LINE#         53
+  C:083DH         LINE#         54
+  C:0848H         LINE#         55
+  C:085BH         LINE#         56
+  -------         ENDPROC       _STRING
+  -------         PROC          _DISPLAY
+  D:0007H         SYMBOL        d
+  C:08D7H         LINE#         58
+  C:08D7H         LINE#         59
+  C:08D7H         LINE#         60
+  C:08D9H         LINE#         61
+  C:08DBH         LINE#         62
+  C:08DBH         LINE#         63
+  C:08DBH         LINE#         64
+  C:08DEH         LINE#         65
+  C:08E0H         LINE#         66
+  -------         ENDPROC       _DISPLAY
+  -------         PROC          L?0024
+  -------         ENDPROC       L?0024
+  -------         PROC          _DELAY
+  D:0006H         SYMBOL        n
+  -------         DO            
+  D:0005H         SYMBOL        i
+  -------         ENDDO         
+  C:0808H         LINE#         71
+  C:0808H         LINE#         72
+  C:0808H         LINE#         74
+  C:0811H         LINE#         75
+  C:0811H         LINE#         76
+  C:0820H         LINE#         77
+  C:082FH         LINE#         78
+  C:0836H         LINE#         79
+  -------         ENDPROC       _DELAY
+  -------         ENDMOD        LCD_STRING
+
+  -------         MODULE        ?C?CLDPTR
+  C:0891H         PUBLIC        ?C?CLDPTR
+  -------         ENDMOD        ?C?CLDPTR
+
+******************************************************************************
+* RESTRICTED VERSION WITH 0800H BYTE CODE SIZE LIMIT; USED: 00BCH BYTE ( 9%) *
+******************************************************************************
+
+Program Size: data=12.0 xdata=0 code=228
+LINK/LOCATE RUN COMPLETE.  0 WARNING(S),  0 ERROR(S)

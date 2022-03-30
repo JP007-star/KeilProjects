@@ -1,0 +1,97 @@
+C51 COMPILER V9.60.0.0   LCD_CHAR                                                          05/04/2020 22:41:43 PAGE 1   
+
+
+C51 COMPILER V9.60.0.0, COMPILATION OF MODULE LCD_CHAR
+OBJECT MODULE PLACED IN .\Objects\lcd char.obj
+COMPILER INVOKED BY: E:\My document\software\KEIL V5\C51\BIN\C51.EXE lcd char.c OPTIMIZE(8,SPEED) BROWSE DEBUG OBJECTEXT
+                    -END PRINT(.\Listings\lcd char.lst) TABS(2) OBJECT(.\Objects\lcd char.obj)
+
+line level    source
+
+   1          # include <reg51.h>
+   2          # define lcd P2
+   3          
+   4          
+   5          sbit rs =P3^0;
+   6          sbit wr =P3^1;
+   7          sbit en =P3^2;
+   8          
+   9          void init (void);
+  10          void command(unsigned char);
+  11          void display(unsigned char);
+  12          
+  13          
+  14          void delay(unsigned int);
+  15          
+  16          void main()
+  17          {
+  18   1        while(1)
+  19   1        {
+  20   2          init();
+  21   2          display('S');
+  22   2          while(1);
+  23   2        }
+  24   1      }
+  25          
+  26          
+  27          
+  28          void init()
+  29          {
+  30   1        command (0x01);   //  clear display screen
+  31   1        command (0x02);   // Return Home
+  32   1        command (0x0c);  // Display On cursor OFF 
+  33   1        command (0x38);  //2 lines and 5*7 matrix
+  34   1        command (0x80);  //Forces cursor to begining 1st line
+  35   1      }                    // (0xc0) 2nd line
+  36          
+  37          void command(unsigned char c) // command function
+  38          {
+  39   1        lcd =c;      //command
+  40   1        rs=0;        //rs 0 for command
+  41   1        wr=0;        //write
+  42   1        en=1;        //Enable
+  43   1        delay(2);    // delay for 2 s
+  44   1        en=0;        //disable
+  45   1      }
+  46          
+  47          void display (unsigned char d)
+  48          {
+  49   1        lcd =d;         
+  50   1        rs=1;
+  51   1        wr=0;
+  52   1        en=1;
+  53   1        delay(2);
+  54   1        en=0;
+C51 COMPILER V9.60.0.0   LCD_CHAR                                                          05/04/2020 22:41:43 PAGE 2   
+
+  55   1      }
+  56             
+  57            
+  58            
+  59          
+  60          void delay (unsigned int n)
+  61          {
+  62   1        unsigned char i;
+  63   1        for (n;n>0;n--)
+  64   1        {
+  65   2          for(i=250;i>0;i--);
+  66   2          for(i=247;i>0;i--);
+  67   2        }
+  68   1      }
+  69          
+  70          
+  71          
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =    110    ----
+   CONSTANT SIZE    =   ----    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----    ----
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

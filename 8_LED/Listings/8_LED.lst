@@ -1,0 +1,50 @@
+C51 COMPILER V9.60.0.0   8_LED                                                             04/30/2020 08:43:39 PAGE 1   
+
+
+C51 COMPILER V9.60.0.0, COMPILATION OF MODULE 8_LED
+OBJECT MODULE PLACED IN .\Objects\8_LED.obj
+COMPILER INVOKED BY: E:\My document\software\KEIL V5\C51\BIN\C51.EXE 8_LED.C OPTIMIZE(8,SPEED) BROWSE DEBUG OBJECTEXTEND
+                    - PRINT(.\Listings\8_LED.lst) TABS(2) OBJECT(.\Objects\8_LED.obj)
+
+line level    source
+
+   1          # include <reg51.h>
+   2          #define LEDs P1
+   3          void delay (int);
+   4          void main()
+   5          {
+   6   1        while(1)
+   7   1        {
+   8   2          LEDs=0xAA;                               //LEDs=0x3C;        3         //LEDs=0xF0;   2                 
+             - //LEDs=0x00;  1
+   9   2          delay(100);
+  10   2          
+  11   2          LEDs=0x55;                               //LEDs=0xC3;        3         //LEDs=0x0F;   2                 
+             -     //LEDs=0xFF;   2
+  12   2          delay(100);
+  13   2        }
+  14   1      }
+  15          
+  16          void delay (int n)
+  17          {
+  18   1        unsigned char i;
+  19   1        for (n;n>0;n--)
+  20   1        {
+  21   2          for(i=255;i>0;i--);
+  22   2          for(i=255;i>0;i--);
+  23   2        }
+  24   1      }
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =     71    ----
+   CONSTANT SIZE    =   ----    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----    ----
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

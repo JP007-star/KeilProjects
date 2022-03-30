@@ -1,0 +1,108 @@
+C51 COMPILER V9.60.0.0   LCD_STRING                                                        05/04/2020 22:59:53 PAGE 1   
+
+
+C51 COMPILER V9.60.0.0, COMPILATION OF MODULE LCD_STRING
+OBJECT MODULE PLACED IN .\Objects\LCD_STRING.obj
+COMPILER INVOKED BY: E:\My document\software\KEIL V5\C51\BIN\C51.EXE LCD_STRING.C OPTIMIZE(8,SPEED) BROWSE DEBUG OBJECTE
+                    -XTEND PRINT(.\Listings\LCD_STRING.lst) TABS(2) OBJECT(.\Objects\LCD_STRING.obj)
+
+line level    source
+
+   1          # include <reg51.h>
+   2          # define lcd P2
+   3          
+   4          
+   5          sbit rs =P3^0;
+   6          sbit wr =P3^1;
+   7          sbit en =P3^2;
+   8          
+   9          void init (void);
+  10          void command(unsigned char);
+  11          void display(unsigned char);
+  12          
+  13          void string(unsigned char*);
+  14          
+  15          
+  16          
+  17          void delay(unsigned int);
+  18          
+  19          void main()
+  20          {
+  21   1        while(1)
+  22   1        {
+  23   2          init();
+  24   2          string("SMILE");
+  25   2          command(0xc0);
+  26   2          string("ENGINEERING CLUB");
+  27   2          while(1);
+  28   2        }
+  29   1      }
+  30          
+  31          
+  32          
+  33          void init()
+  34          {
+  35   1        command (0x01);   //  clear display screen
+  36   1        command (0x02);   // Return Home
+  37   1        command (0x0c);  // Display On cursor OFF 
+  38   1        command (0x38);  //2 lines and 5*7 matrix
+  39   1        command (0x80);  //Forces cursor to begining 1st line
+  40   1      }                    // (0xc0) 2nd line
+  41          
+  42          void command(unsigned char c) // command function
+  43          {
+  44   1        lcd =c;      //command
+  45   1        rs=0;        //rs 0 for command
+  46   1        wr=0;        //write
+  47   1        en=1;        //Enable
+  48   1        delay(2);    // delay for 2 s
+  49   1        en=0;        //disable
+  50   1      }
+  51          
+  52          void string (unsigned char *s) 
+  53          {
+  54   1        while(*s)
+C51 COMPILER V9.60.0.0   LCD_STRING                                                        05/04/2020 22:59:53 PAGE 2   
+
+  55   1        display(*s++);
+  56   1      }
+  57          
+  58          void display (unsigned char d)
+  59          {
+  60   1        lcd =d;         
+  61   1        rs=1;
+  62   1        wr=0;
+  63   1        en=1;
+  64   1        delay(2);
+  65   1        en=0;
+  66   1      }
+  67             
+  68            
+  69            
+  70          
+  71          void delay (unsigned int n)
+  72          {
+  73   1        unsigned char i;
+  74   1        for (n;n>0;n--)
+  75   1        {
+  76   2          for(i=250;i>0;i--);
+  77   2          for(i=247;i>0;i--);
+  78   2        }
+  79   1      }
+  80          
+  81          
+  82          
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =    165    ----
+   CONSTANT SIZE    =     23    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----       3
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

@@ -1,0 +1,176 @@
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                    05/04/2020  23:41:12  PAGE 1
+
+
+BL51 BANKED LINKER/LOCATER V6.22.2.0, INVOKED BY:
+E:\MY DOCUMENT\SOFTWARE\KEIL V5\C51\BIN\BL51.EXE .\Objects\LCD_SYMBOLS.obj TO .\Objects\LCD_SYMBOLS PRINT (.\Listings\LC
+>> D_SYMBOLS.m51) RAMSIZE (256)
+
+
+MEMORY MODEL: SMALL
+
+
+INPUT MODULES INCLUDED:
+  .\Objects\LCD_SYMBOLS.obj (LCD_SYMBOLS)
+  E:\MY DOCUMENT\SOFTWARE\KEIL V5\C51\LIB\C51S.LIB (?C_STARTUP)
+  E:\MY DOCUMENT\SOFTWARE\KEIL V5\C51\LIB\C51S.LIB (?C_INIT)
+
+
+LINK MAP OF MODULE:  .\Objects\LCD_SYMBOLS (LCD_SYMBOLS)
+
+
+            TYPE    BASE      LENGTH    RELOCATION   SEGMENT NAME
+            -----------------------------------------------------
+
+            * * * * * * *   D A T A   M E M O R Y   * * * * * * *
+            REG     0000H     0008H     ABSOLUTE     "REG BANK 0"
+            DATA    0008H     0008H     UNIT         ?DT?LCD_SYMBOLS
+            DATA    0010H     0001H     UNIT         _DATA_GROUP_
+            IDATA   0011H     0001H     UNIT         ?STACK
+
+            * * * * * * *   C O D E   M E M O R Y   * * * * * * *
+            CODE    0000H     0003H     ABSOLUTE     
+                    0003H     07FDH                  *** GAP ***
+            CODE    0800H     008CH     UNIT         ?C_C51STARTUP
+            CODE    088CH     0037H     UNIT         ?PR?_DELAY?LCD_SYMBOLS
+            CODE    08C3H     002CH     UNIT         ?PR?CGRAM?LCD_SYMBOLS
+            CODE    08EFH     0019H     UNIT         ?PR?INIT?LCD_SYMBOLS
+            CODE    0908H     000DH     UNIT         ?PR?MAIN?LCD_SYMBOLS
+            CODE    0915H     000BH     UNIT         ?C_INITSEG
+            CODE    0920H     000AH     UNIT         ?PR?_COMD?LCD_SYMBOLS
+            CODE    092AH     000AH     UNIT         ?PR?_DISPLAY?LCD_SYMBOLS
+
+
+
+OVERLAY MAP OF MODULE:   .\Objects\LCD_SYMBOLS (LCD_SYMBOLS)
+
+
+SEGMENT                            DATA_GROUP 
+  +--> CALLED SEGMENT            START    LENGTH
+------------------------------------------------
+?C_C51STARTUP                    -----    -----
+  +--> ?PR?MAIN?LCD_SYMBOLS
+  +--> ?C_INITSEG
+
+?PR?MAIN?LCD_SYMBOLS             -----    -----
+  +--> ?PR?INIT?LCD_SYMBOLS
+  +--> ?PR?CGRAM?LCD_SYMBOLS
+  +--> ?PR?_DISPLAY?LCD_SYMBOLS
+
+?PR?INIT?LCD_SYMBOLS             -----    -----
+  +--> ?PR?_COMD?LCD_SYMBOLS
+
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  05/04/2020  23:41:12  PAGE 2
+
+
+?PR?_COMD?LCD_SYMBOLS            -----    -----
+  +--> ?PR?_DELAY?LCD_SYMBOLS
+
+?PR?CGRAM?LCD_SYMBOLS            0010H    0001H
+  +--> ?PR?_COMD?LCD_SYMBOLS
+  +--> ?PR?_DISPLAY?LCD_SYMBOLS
+
+?PR?_DISPLAY?LCD_SYMBOLS         -----    -----
+  +--> ?PR?_DELAY?LCD_SYMBOLS
+
+
+
+SYMBOL TABLE OF MODULE:  .\Objects\LCD_SYMBOLS (LCD_SYMBOLS)
+
+  VALUE           TYPE          NAME
+  ----------------------------------
+
+  -------         MODULE        LCD_SYMBOLS
+  C:0000H         SYMBOL        _ICE_DUMMY_
+  D:00A0H         PUBLIC        P2
+  D:00B0H         PUBLIC        P3
+  C:08C3H         PUBLIC        cgram
+  C:0894H         PUBLIC        _delay
+  C:0920H         PUBLIC        _comd
+  C:0908H         PUBLIC        main
+  C:08EFH         PUBLIC        init
+  B:00B0H.2       PUBLIC        en
+  D:0008H         PUBLIC        ohmdata
+  B:00B0H.0       PUBLIC        rs
+  B:00B0H.1       PUBLIC        wr
+  C:092AH         PUBLIC        _display
+  -------         PROC          MAIN
+  C:0908H         LINE#         20
+  C:0908H         LINE#         21
+  C:0908H         LINE#         23
+  C:090BH         LINE#         24
+  C:090EH         LINE#         25
+  C:090EH         LINE#         26
+  C:090EH         LINE#         27
+  C:0913H         LINE#         29
+  -------         ENDPROC       MAIN
+  -------         PROC          INIT
+  C:08EFH         LINE#         35
+  C:08EFH         LINE#         36
+  C:08EFH         LINE#         37
+  C:08F4H         LINE#         38
+  C:08F9H         LINE#         39
+  C:08FEH         LINE#         40
+  C:0903H         LINE#         41
+  -------         ENDPROC       INIT
+  -------         PROC          _COMD
+  D:0007H         SYMBOL        cd
+  C:0920H         LINE#         44
+  C:0920H         LINE#         45
+  C:0920H         LINE#         46
+  C:0922H         LINE#         47
+  C:0924H         LINE#         48
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  05/04/2020  23:41:12  PAGE 3
+
+
+  C:0924H         LINE#         49
+  C:0924H         LINE#         50
+  C:0927H         LINE#         51
+  C:0929H         LINE#         52
+  -------         ENDPROC       _COMD
+  -------         PROC          CGRAM
+  -------         DO            
+  D:0010H         SYMBOL        i
+  -------         ENDDO         
+  C:08C3H         LINE#         54
+  C:08C3H         LINE#         55
+  C:08C3H         LINE#         57
+  C:08C8H         LINE#         58
+  C:08DDH         LINE#         59
+  C:08EAH         LINE#         60
+  -------         ENDPROC       CGRAM
+  -------         PROC          _DISPLAY
+  D:0007H         SYMBOL        d
+  C:092AH         LINE#         63
+  C:092AH         LINE#         64
+  C:092AH         LINE#         65
+  C:092CH         LINE#         66
+  C:092EH         LINE#         67
+  C:092EH         LINE#         68
+  C:092EH         LINE#         69
+  C:0931H         LINE#         70
+  C:0933H         LINE#         71
+  -------         ENDPROC       _DISPLAY
+  -------         PROC          L?0024
+  -------         ENDPROC       L?0024
+  -------         PROC          _DELAY
+  D:0006H         SYMBOL        n
+  -------         DO            
+  D:0005H         SYMBOL        i
+  -------         ENDDO         
+  C:0894H         LINE#         76
+  C:0894H         LINE#         77
+  C:0894H         LINE#         79
+  C:089DH         LINE#         80
+  C:089DH         LINE#         81
+  C:08ACH         LINE#         82
+  C:08BBH         LINE#         83
+  C:08C2H         LINE#         84
+  -------         ENDPROC       _DELAY
+  -------         ENDMOD        LCD_SYMBOLS
+
+******************************************************************************
+* RESTRICTED VERSION WITH 0800H BYTE CODE SIZE LIMIT; USED: 00A7H BYTE ( 8%) *
+******************************************************************************
+
+Program Size: data=18.0 xdata=0 code=311
+LINK/LOCATE RUN COMPLETE.  0 WARNING(S),  0 ERROR(S)

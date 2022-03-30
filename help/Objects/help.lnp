@@ -1,0 +1,3 @@
+".\Objects\help.obj" 
+TO ".\Objects\help" 
+PRINT(".\Listings\help.m51") RAMSIZE(256) 

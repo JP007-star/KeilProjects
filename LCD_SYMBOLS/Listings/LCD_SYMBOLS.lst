@@ -1,0 +1,113 @@
+C51 COMPILER V9.60.0.0   LCD_SYMBOLS                                                       05/04/2020 23:40:55 PAGE 1   
+
+
+C51 COMPILER V9.60.0.0, COMPILATION OF MODULE LCD_SYMBOLS
+OBJECT MODULE PLACED IN .\Objects\LCD_SYMBOLS.obj
+COMPILER INVOKED BY: E:\My document\software\KEIL V5\C51\BIN\C51.EXE LCD_SYMBOLS.C OPTIMIZE(8,SPEED) BROWSE DEBUG OBJECT
+                    -EXTEND PRINT(.\Listings\LCD_SYMBOLS.lst) TABS(2) OBJECT(.\Objects\LCD_SYMBOLS.obj)
+
+line level    source
+
+   1          # include <reg51.h>
+   2          # define lcd P2
+   3          
+   4          
+   5          sbit rs =P3^0;
+   6          sbit wr =P3^1;
+   7          sbit en =P3^2;
+   8          
+   9          void init (void);
+  10          void comd(unsigned char);
+  11          void display(unsigned char);
+  12          
+  13          void cgram(void); 
+  14          
+  15          
+  16          
+  17          void delay(unsigned int);
+  18          unsigned char ohmdata[]={0x00,0x0e,0x11,0x11,0x11,0x0a,0x1b,0x00};
+  19          
+  20          void main()
+  21          {
+  22   1        
+  23   1          init();
+  24   1          cgram(); // call cgram data stor
+  25   1        while(1)
+  26   1        {
+  27   2          display(0);
+  28   2          
+  29   2          while(1);
+  30   2        }
+  31   1      }
+  32          
+  33          
+  34          
+  35          void init(void)
+  36          {
+  37   1        comd (0x01);   //  clear display screen
+  38   1        comd (0x02);   // Return Home
+  39   1        comd (0x0c);  // Display On cursor OFF 
+  40   1        comd (0x38);  //2 lines and 5*7 matrix
+  41   1        comd (0x80);  //Forces cursor to begining 1st line
+  42   1      }                    // (0xc0) 2nd line
+  43          
+  44          void comd(unsigned char cd) // command function
+  45          {
+  46   1        lcd =cd;      //command
+  47   1        rs=0;        //rs 0 for command
+  48   1        wr=0;        //write
+  49   1        en=1;        //Enable
+  50   1        delay(2);    // delay for 2 s
+  51   1        en=0;        //disable
+  52   1      }
+  53          
+  54          void cgram (void)
+C51 COMPILER V9.60.0.0   LCD_SYMBOLS                                                       05/04/2020 23:40:55 PAGE 2   
+
+  55          {
+  56   1        char i;
+  57   1        comd(0x40);
+  58   1        for (i=0;i<8;i++)
+  59   1        display(ohmdata[i]);
+  60   1        comd(0x80);
+  61   1      }
+  62          
+  63          void display (unsigned char d)
+  64          {
+  65   1        lcd =d;         
+  66   1        rs=1;
+  67   1        wr=0;
+  68   1        en=1;
+  69   1        delay(2);
+  70   1        en=0;
+  71   1      }
+  72             
+  73            
+  74            
+  75          
+  76          void delay (unsigned int n)
+  77          {
+  78   1        unsigned char i;
+  79   1        for (n;n>0;n--)
+  80   1        {
+  81   2          for(i=250;i>0;i--);
+  82   2          for(i=247;i>0;i--);
+  83   2        }
+  84   1      }
+  85          
+  86          
+  87          
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =    157    ----
+   CONSTANT SIZE    =   ----    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =      8       1
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

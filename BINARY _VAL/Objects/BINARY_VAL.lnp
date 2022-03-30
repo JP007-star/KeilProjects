@@ -1,0 +1,3 @@
+".\Objects\BINARY_VAL.obj" 
+TO ".\Objects\BINARY_VAL" 
+PRINT(".\Listings\BINARY_VAL.m51") RAMSIZE(256) 

@@ -1,0 +1,118 @@
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                    04/30/2020  20:08:34  PAGE 1
+
+
+BL51 BANKED LINKER/LOCATER V6.22.2.0, INVOKED BY:
+E:\MY DOCUMENT\SOFTWARE\KEIL V5\C51\BIN\BL51.EXE .\Objects\FOUR_7-SEGMENT.obj TO .\Objects\FOUR_7-SEGMENT PRINT (.\Listi
+>> ngs\FOUR_7-SEGMENT.m51) RAMSIZE (256)
+
+
+MEMORY MODEL: SMALL
+
+
+INPUT MODULES INCLUDED:
+  .\Objects\FOUR_7-SEGMENT.obj (FOUR_7_SEGMENT)
+  E:\MY DOCUMENT\SOFTWARE\KEIL V5\C51\LIB\C51S.LIB (?C_STARTUP)
+  E:\MY DOCUMENT\SOFTWARE\KEIL V5\C51\LIB\C51S.LIB (?C_INIT)
+
+
+LINK MAP OF MODULE:  .\Objects\FOUR_7-SEGMENT (FOUR_7_SEGMENT)
+
+
+            TYPE    BASE      LENGTH    RELOCATION   SEGMENT NAME
+            -----------------------------------------------------
+
+            * * * * * * *   D A T A   M E M O R Y   * * * * * * *
+            REG     0000H     0008H     ABSOLUTE     "REG BANK 0"
+            DATA    0008H     0014H     UNIT         ?DT?FOUR_7_SEGMENT
+            DATA    001CH     0002H     UNIT         _DATA_GROUP_
+            IDATA   001EH     0001H     UNIT         ?STACK
+
+            * * * * * * *   C O D E   M E M O R Y   * * * * * * *
+            CODE    0000H     0003H     ABSOLUTE     
+                    0003H     07FDH                  *** GAP ***
+            CODE    0800H     008CH     UNIT         ?C_C51STARTUP
+            CODE    088CH     005DH     UNIT         ?PR?MAIN?FOUR_7_SEGMENT
+            CODE    08E9H     002FH     UNIT         ?PR?_DELAY?FOUR_7_SEGMENT
+            CODE    0918H     0017H     UNIT         ?C_INITSEG
+
+
+
+OVERLAY MAP OF MODULE:   .\Objects\FOUR_7-SEGMENT (FOUR_7_SEGMENT)
+
+
+SEGMENT                             DATA_GROUP 
+  +--> CALLED SEGMENT             START    LENGTH
+-------------------------------------------------
+?C_C51STARTUP                     -----    -----
+  +--> ?PR?MAIN?FOUR_7_SEGMENT
+  +--> ?C_INITSEG
+
+?PR?MAIN?FOUR_7_SEGMENT           001CH    0002H
+  +--> ?PR?_DELAY?FOUR_7_SEGMENT
+
+
+
+SYMBOL TABLE OF MODULE:  .\Objects\FOUR_7-SEGMENT (FOUR_7_SEGMENT)
+
+  VALUE           TYPE          NAME
+  ----------------------------------
+
+  -------         MODULE        FOUR_7_SEGMENT
+  C:0000H         SYMBOL        _ICE_DUMMY_
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  04/30/2020  20:08:34  PAGE 2
+
+
+  D:0080H         PUBLIC        P0
+  D:00A0H         PUBLIC        P2
+  D:0008H         PUBLIC        sdata
+  C:08E9H         PUBLIC        _delay
+  C:088CH         PUBLIC        main
+  B:0080H.0       PUBLIC        seg1
+  B:0080H.1       PUBLIC        seg2
+  -------         PROC          MAIN
+  -------         DO            
+  D:001CH         SYMBOL        i
+  D:001DH         SYMBOL        j
+  -------         ENDDO         
+  C:088CH         LINE#         10
+  C:088CH         LINE#         11
+  C:088CH         LINE#         12
+  C:088FH         LINE#         13
+  C:088FH         LINE#         14
+  C:088FH         LINE#         15
+  C:089DH         LINE#         16
+  C:089DH         LINE#         17
+  C:08ABH         LINE#         18
+  C:08ABH         LINE#         19
+  C:08BAH         LINE#         20
+  C:08BCH         LINE#         21
+  C:08C3H         LINE#         22
+  C:08C5H         LINE#         23
+  C:08D6H         LINE#         24
+  C:08D8H         LINE#         25
+  C:08DFH         LINE#         26
+  C:08E1H         LINE#         27
+  C:08E5H         LINE#         28
+  -------         ENDPROC       MAIN
+  -------         PROC          _DELAY
+  D:0006H         SYMBOL        n
+  -------         DO            
+  D:0005H         SYMBOL        i
+  -------         ENDDO         
+  C:08E9H         LINE#         32
+  C:08E9H         LINE#         33
+  C:08E9H         LINE#         35
+  C:08F2H         LINE#         36
+  C:08F2H         LINE#         37
+  C:0901H         LINE#         38
+  C:0910H         LINE#         39
+  C:0917H         LINE#         40
+  -------         ENDPROC       _DELAY
+  -------         ENDMOD        FOUR_7_SEGMENT
+
+******************************************************************************
+* RESTRICTED VERSION WITH 0800H BYTE CODE SIZE LIMIT; USED: 00A2H BYTE ( 7%) *
+******************************************************************************
+
+Program Size: data=31.0 xdata=0 code=306
+LINK/LOCATE RUN COMPLETE.  0 WARNING(S),  0 ERROR(S)

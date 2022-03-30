@@ -1,0 +1,3 @@
+".\Objects\4__7 segment with float.obj" 
+TO ".\Objects\4__7 segment with float" 
+PRINT(".\Listings\4__7 segment with float.m51") RAMSIZE(256) 

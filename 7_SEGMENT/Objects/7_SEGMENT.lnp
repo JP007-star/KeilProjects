@@ -1,0 +1,3 @@
+".\Objects\7_SEGMENT.obj" 
+TO ".\Objects\7_SEGMENT" 
+PRINT(".\Listings\7_SEGMENT.m51") RAMSIZE(256) 
